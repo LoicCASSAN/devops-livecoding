@@ -34,3 +34,14 @@
     name: docker
     state: started
   tags: docker
+
+# Ajoutez ici votre tâche de déploiement du conteneur front-end
+- name: Deploy Frontend Container
+  docker_container:
+    name: my-front-end
+    image: loiccassan/my-front-end:latest
+    networks:
+      - name: my-network
+    pull: true
+    state: started
+    restart_policy: always

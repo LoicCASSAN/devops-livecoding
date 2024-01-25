@@ -34,3 +34,10 @@ jobs:
           context: ./http-server
           tags:  ${{secrets.DOCKERHUB_USERNAME}}/httpd:latest
           push: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build image and push my-front-end
+        uses: docker/build-push-action@v3
+        with: 
+          context: ${{ inputs.front_end_path }}
+          tags:  ${{secrets.DOCKERHUB_USERNAME}}/my-front-end
+          push: ${{ github.ref == 'refs/heads/main' }}

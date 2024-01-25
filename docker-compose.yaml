@@ -26,6 +26,14 @@ services:
     depends_on:
       - backend
 
+  frontend:
+    build: ./devops-front
+    container_name: my-front-end
+    networks:
+      - my-network
+    ports:
+      - "8080:80"      
+
 volumes:
   db-volume:
 
