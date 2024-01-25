@@ -38,6 +38,6 @@ jobs:
       - name: Build image and push my-front-end
         uses: docker/build-push-action@v3
         with: 
-          context: ${{ inputs.front_end_path }}
-          tags:  ${{secrets.DOCKERHUB_USERNAME}}/my-front-end
+          context: ${{ github.workspace }}/devops-front  # Utilisez le chemin correct vers le front-end
+          tags:  ${{ secrets.DOCKERHUB_USERNAME }}/my-front-end:latest
           push: ${{ github.ref == 'refs/heads/main' }}
