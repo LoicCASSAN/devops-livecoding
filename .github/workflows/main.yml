@@ -61,3 +61,4 @@ jobs:
           tags:  ${{secrets.DOCKERHUB_USERNAME}}/httpd # The tag for the docker image 
           # push to dockerhub only when code is pushed to main branch
           push: ${{ github.ref == 'refs/heads/main' }}
+          
