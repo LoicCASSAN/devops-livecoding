@@ -1,0 +1,7 @@
+all:
+ vars:
+   ansible_user: centos
+   ansible_ssh_private_key_file: /home/loic/id_rsa #/home/loic/id_rsa  ../../id_rsa
+ children:
+   prod:
+     hosts: loic.cassan.takima.cloud #hostname or IP

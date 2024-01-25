@@ -1,0 +1,9 @@
+- name: Run HTTPD
+  docker_container:
+    name: httpd
+    image: loiccassan/httpd:latest
+    ports:
+      - "80:80"
+    networks:
+      - name: my-network
+
